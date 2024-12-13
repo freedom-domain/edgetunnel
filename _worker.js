@@ -257,7 +257,7 @@ export default {
 					enableSocks = false;
 				}
 
-				return await vlessOverWSHandler(request);
+				return await handler(request);
 			}
 		} catch (err) {
 			/** @type {Error} */ let e = err;
@@ -270,7 +270,7 @@ export default {
  * 处理 VLESS over WebSocket 的请求
  * @param {import("@cloudflare/workers-types").Request} request
  */
-async function vlessOverWSHandler(request) {
+async function handler(request) {
 
 	/** @type {import("@cloudflare/workers-types").WebSocket[]} */
 	// @ts-ignore
